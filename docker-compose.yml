@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command: python -m src.main --config config/default.json --verbose
+    environment:
+      - PYTHONPATH=/app
+    depends_on:
+      - redis
+      - mongodb
+    networks:
+      - adca-network
+
+  redis:
+    image: redis:7.0-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    networks:
+      - adca-network
+
+  mongodb:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=adca
+      - MONGO_INITDB_ROOT_PASSWORD=devpassword
+    networks:
+      - adca-network
+
+networks:
+  adca-network:
+    driver: bridge
+
+volumes:
+  redis-data:
+  mongodb-data:

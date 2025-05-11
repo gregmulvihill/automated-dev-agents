@@ -10,12 +10,12 @@
 Automated Development System with Configurable Agents (ADCA) is a framework for creating specialized AI agents that automate various aspects of the software development lifecycle. It leverages a multi-tiered approach to break down complex development tasks into discrete missions that can be handled by specialized agents working in coordination.
 
 ADCA is part of a larger ecosystem:
-- It receives strategic direction from [Orchestrate-AI](https://github.com/gregmulvihill/orchestrate-ai)
-- It uses [Multi-Tiered Memory Architecture (MTMA)](https://github.com/gregmulvihill/multi-tiered-memory-architecture) for memory persistence and knowledge sharing
+- It receives strategic direction and task prioritization from [Orchestrate-AI](https://github.com/gregmulvihill/orchestrate-ai)
+- It leverages [Multi-Tiered Memory Architecture (MTMA)](https://github.com/gregmulvihill/multi-tiered-memory-architecture) for memory persistence and knowledge sharing
 
 ## Ecosystem Architecture
 
-ADCA operates as the middle layer in a three-tier architecture:
+ADCA functions as the tactical/execution layer in a three-tier architecture:
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -24,7 +24,7 @@ ADCA operates as the middle layer in a three-tier architecture:
 └────────────────────────┬────────────────────────┘
                          │
 ┌────────────────────────▼────────────────────────┐
-│ AUTOMATED-DEV-AGENTS (THIS REPO)                │
+│ AUTOMATED-DEV-AGENTS (This Repository)          │
 │ (Tactical Task Execution & Agent Management)    │
 └────────────────────────┬────────────────────────┘
                          │
@@ -53,6 +53,19 @@ Each agent utilizes the MTMA system for internal memory and inter-agent communic
 - **Learning Mechanisms** - Improve agent performance through feedback and experience
 - **Human Oversight Controls** - Well-defined intervention points for supervision and decision-making
 - **Progress Reporting** - Detailed updates on task completion and project status
+
+## Integration Points
+
+### Integration with Orchestrate-AI
+- Receives high-level tasks and priorities from Orchestrate-AI
+- Provides task execution status and results back to Orchestrate-AI
+- Follows strategic direction set by Orchestrate-AI workflows
+
+### Integration with MTMA
+- Uses MTMA for all memory operations (short-term, long-term, world state)
+- Stores task contexts and results in the appropriate memory tiers
+- Leverages MTMA's search capabilities to retrieve relevant context
+- Maintains agent state through MTMA's persistence layer
 
 ## Project Structure
 
@@ -89,30 +102,14 @@ Detailed setup and usage instructions will be provided as the project matures.
 - Qdrant
 - FastAPI
 
-## Integration Points
-
-### Integration with Orchestrate-AI
-ADCA receives tasks and strategic direction from Orchestrate-AI, which handles:
-- High-level business strategy
-- Value-based task prioritization
-- Workflow automation via n8n.io
-- Global monitoring and reporting
-
-### Integration with MTMA
-ADCA uses MTMA for memory persistence and knowledge sharing:
-- Short-term memory for task context
-- Long-term memory for artifacts and knowledge
-- World state for shared context
-- Memory search for relevant information
-
 ## Contributing
 
 This project is in the conceptual phase and not yet ready for contributions. Watch this space for updates as the project evolves.
 
 ## Related Projects
 
-- [Orchestrate-AI](https://github.com/gregmulvihill/orchestrate-ai) - Strategic orchestration system that directs ADCA operations
-- [Multi-Tiered Memory Architecture (MTMA)](https://github.com/gregmulvihill/multi-tiered-memory-architecture) - The memory system used by ADCA
+- [Orchestrate-AI](https://github.com/gregmulvihill/orchestrate-ai) - The strategic orchestration layer that provides business logic and workflow automation
+- [Multi-Tiered Memory Architecture (MTMA)](https://github.com/gregmulvihill/multi-tiered-memory-architecture) - The memory system used by ADCA for persistence, context preservation, and knowledge sharing
 
 ## License
 

@@ -1,0 +1,37 @@
+{
+  "use_mock_clients": true,
+  "setup_demo_tasks": true,
+  "orchestrator_interval": 5.0,
+  "agents": {
+    "code_generators": [
+      {
+        "name": "CodeGenerator1",
+        "description": "Generates code implementations based on requirements"
+      }
+    ],
+    "test_writers": [
+      {
+        "name": "TestWriter1",
+        "description": "Writes comprehensive tests for code implementations"
+      }
+    ],
+    "claude_integration": [
+      {
+        "name": "ClaudeAssistant",
+        "description": "General-purpose Claude integration for complex reasoning tasks",
+        "model": "claude-3-7-sonnet",
+        "api_key": "YOUR_API_KEY_HERE"
+      }
+    ]
+  },
+  "mtma": {
+    "controller_url": "http://localhost:8000",
+    "namespace": "adca_dev"
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "logs/adca.log",
+    "max_size": 10485760,
+    "backup_count": 5
+  }
+}

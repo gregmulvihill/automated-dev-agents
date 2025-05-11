@@ -9,15 +9,13 @@
 
 Automated Development System with Configurable Agents (ADCA) is a framework for creating specialized AI agents that automate various aspects of the software development lifecycle. It leverages a multi-tiered approach to break down complex development tasks into discrete missions that can be handled by specialized agents working in coordination.
 
-ADCA is part of a larger ecosystem of repositories that work together to form a complete AI-driven development platform:
+ADCA is part of a larger ecosystem:
+- It receives strategic direction from [Orchestrate-AI](https://github.com/gregmulvihill/orchestrate-ai)
+- It uses [Multi-Tiered Memory Architecture (MTMA)](https://github.com/gregmulvihill/multi-tiered-memory-architecture) for memory persistence and knowledge sharing
 
-- **[Orchestrate-AI](https://github.com/gregmulvihill/orchestrate-ai)**: The high-level strategic orchestration system that manages workflows, business logic, and prioritization
-- **[ADCA](https://github.com/gregmulvihill/automated-dev-agents)** (this repository): The tactical task execution and agent management layer
-- **[Multi-Tiered Memory Architecture (MTMA)](https://github.com/gregmulvihill/multi-tiered-memory-architecture)**: The foundation layer providing memory persistence, context preservation, and knowledge management
+## Ecosystem Architecture
 
-## System Architecture
-
-The three-tier architecture of our ecosystem positions ADCA as the middle layer:
+ADCA operates as the middle layer in a three-tier architecture:
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -26,17 +24,15 @@ The three-tier architecture of our ecosystem positions ADCA as the middle layer:
 └────────────────────────┬────────────────────────┘
                          │
 ┌────────────────────────▼────────────────────────┐
-│ AUTOMATED-DEV-AGENTS (ADCA)                     │
+│ AUTOMATED-DEV-AGENTS (THIS REPO)                │
 │ (Tactical Task Execution & Agent Management)    │
 └────────────────────────┬────────────────────────┘
                          │
 ┌────────────────────────▼────────────────────────┐
-│ MULTI-TIERED MEMORY ARCHITECTURE (MTMA)         │
+│ MULTI-TIERED MEMORY ARCHITECTURE                │
 │ (Persistence, Context Preservation, Knowledge)  │
 └─────────────────────────────────────────────────┘
 ```
-
-ADCA receives strategic goals and task priorities from Orchestrate-AI, then executes these tasks using specialized agents. It relies on MTMA for memory operations, enabling persistent context across agent operations.
 
 ## Agent Architecture
 
@@ -84,7 +80,7 @@ Each agent utilizes the MTMA system for internal memory and inter-agent communic
 
 Detailed setup and usage instructions will be provided as the project matures.
 
-### Prerequisites (Planned)
+## Requirements (Planned)
 
 - Python 3.10+
 - Redis
@@ -93,18 +89,30 @@ Detailed setup and usage instructions will be provided as the project matures.
 - Qdrant
 - FastAPI
 
-### Integration with Other Systems
+## Integration Points
 
-For a complete development platform, you'll want to set up:
+### Integration with Orchestrate-AI
+ADCA receives tasks and strategic direction from Orchestrate-AI, which handles:
+- High-level business strategy
+- Value-based task prioritization
+- Workflow automation via n8n.io
+- Global monitoring and reporting
 
-1. **[Orchestrate-AI](https://github.com/gregmulvihill/orchestrate-ai)** - For strategic orchestration
-2. **[MTMA](https://github.com/gregmulvihill/multi-tiered-memory-architecture)** - For memory operations
-
-See the [integration guide](docs/integration.md) for details on connecting these systems.
+### Integration with MTMA
+ADCA uses MTMA for memory persistence and knowledge sharing:
+- Short-term memory for task context
+- Long-term memory for artifacts and knowledge
+- World state for shared context
+- Memory search for relevant information
 
 ## Contributing
 
 This project is in the conceptual phase and not yet ready for contributions. Watch this space for updates as the project evolves.
+
+## Related Projects
+
+- [Orchestrate-AI](https://github.com/gregmulvihill/orchestrate-ai) - Strategic orchestration system that directs ADCA operations
+- [Multi-Tiered Memory Architecture (MTMA)](https://github.com/gregmulvihill/multi-tiered-memory-architecture) - The memory system used by ADCA
 
 ## License
 

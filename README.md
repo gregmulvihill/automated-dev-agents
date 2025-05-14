@@ -1,6 +1,10 @@
 # Automated Development System with Configurable Agents
 
-![Status: Pre-Alpha](https://img.shields.io/badge/Status-Pre--Alpha-red)
+[![CogentEcho.ai](https://img.shields.io/badge/CogentEcho.ai-Ecosystem-blue)](https://github.com/topics/cogentecho-ai)
+[![Status: Pre-Alpha](https://img.shields.io/badge/Status-Pre--Alpha-red)](https://github.com/gregmulvihill/automated-dev-agents)
+[![Tactical Layer](https://img.shields.io/badge/Type-Tactical%20Layer-green)](https://github.com/gregmulvihill/automated-dev-agents)
+[![License](https://img.shields.io/github/license/gregmulvihill/automated-dev-agents)](LICENSE)
+[![Protected Branch](https://img.shields.io/badge/Main%20Branch-Protected-informational)](https://github.com/gregmulvihill/automated-dev-agents)
 
 > **⚠️ PRE-ALPHA WARNING ⚠️**  
 > This project is in pre-alpha stage. The content has been created conceptually but has not been tested. Proceed with caution as significant changes may occur before the first stable release.
@@ -102,6 +106,21 @@ Detailed setup and usage instructions will be provided as the project matures.
 - Qdrant
 - FastAPI
 
+## Development
+
+### Branch Protection
+
+The main branch is protected and requires pull requests with at least one approval before merging. This ensures code quality and proper review of all changes.
+
+### Development Workflow
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request for review
+5. Address any feedback
+6. Your changes will be merged after approval
+
 ## Contributing
 
 This project is in the conceptual phase and not yet ready for contributions. Watch this space for updates as the project evolves.
@@ -110,6 +129,8 @@ This project is in the conceptual phase and not yet ready for contributions. Wat
 
 - [Orchestrate-AI](https://github.com/gregmulvihill/orchestrate-ai) - The strategic orchestration layer that provides business logic and workflow automation
 - [Multi-Tiered Memory Architecture (MTMA)](https://github.com/gregmulvihill/multi-tiered-memory-architecture) - The memory system used by ADCA for persistence, context preservation, and knowledge sharing
+- [MCP Manager](https://github.com/gregmulvihill/mcp-manager) - Tool for managing MCP servers in the ecosystem
+- [Claude Voice MCP](https://github.com/gregmulvihill/claude-voice-mcp) - MCP server for voice integration with Claude Desktop
 
 ## License
 
